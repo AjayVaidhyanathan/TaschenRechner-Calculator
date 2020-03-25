@@ -51,7 +51,7 @@ For other files in \app\src\main\res\values\ do the same.
 
 what to contribute to this project by developing together<br>
 
-***Email id : *** think.rethinkstudio@gmail.com
+Email id : think.rethinkstudio@gmail.com
 
 ---
 
