@@ -1,2 +1,45 @@
-# TaschenRechner-Calculator
-First version of my first android app, ultimate aim is to build facilitate maximum controls possible on this calculator app with upcoming version, please i would like to go through and comment on any necessary modification that would be helpful to develop further, Also further version of this with the extreme UI interface which can outrun existing app, are you a developer? Good, join us to make this incredible 
+## TaschenRechner-Calculator
+
+<p>A Calculator app? Thats it? No, its not . This is a complete all in essential **calculator** app completely from scratch</p><br>
+
+<p>This is meant for people with no coding experience starting from basics to completely building app that comprises almost everything covered</p><br>
+
+---
+
+> #### *** Version 0.1.0 ***
+>
+> - Basic Arithmetic functions
+> - Simple UI Grid layout 
+> - Fix for app crashing on prolonged click
+
+---
+
+## Project Layout
+
+<p>Two xml file contained so far to this layout</p>
+
+> activity_main.xml
+> buttons_layout.xml
+
+<br>
+
+<p>button_layout.xml file is attached to activity_main.xml with the code given below</p><br>
+
+'' <include
+            layout="@layout/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/> ''
+
+with the layout relative to the grid
+
+'' <RelativeLayout
+	.......
+</RelativeLayout>''
+
+<p>Resource file can be found out in \app\src\main\res\layout\</p>            
+
+
+
+
+
+
