@@ -25,10 +25,10 @@
 
 <p>button_layout.xml file is attached to activity_main.xml with the code given below</p><br>
 
-'' <include
+    <include
             layout="@layout/button_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/> ''
+            android:layout_height="match_parent"/>
 
 <p>Resource file can be found out in \app\src\main\res\layout\</p>            
 
