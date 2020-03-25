@@ -18,8 +18,8 @@
 
 <p>Two xml file contained so far to this layout</p>
 
-> activity_main.xml
-> buttons_layout.xml
+> - activity_main.xml
+> - buttons_layout.xml
 
 <br>
 
@@ -30,13 +30,31 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/> ''
 
-with the layout relative to the grid
-
-'' <RelativeLayout
-	.......
-</RelativeLayout>''
-
 <p>Resource file can be found out in \app\src\main\res\layout\</p>            
+
+---
+
+## Error
+
+In case of an error, take duplicate copy of <br>
+
+> - activity_main.xml
+> - buttons_layout.xml 
+
+paste in the dir : \app\src\main\res\layout\ <br>
+
+For other files in \app\src\main\res\values\ do the same.
+
+---
+
+### Attention
+
+what to contribute to this project by developing together<br>
+
+***Email id : *** think.rethinkstudio@gmail.com
+
+---
+
 
 
 
