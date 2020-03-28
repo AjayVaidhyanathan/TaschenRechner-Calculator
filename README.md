@@ -7,10 +7,10 @@
 ---
 > #### *** Version 0.1.0 ***
 >
-> - Basic Arithmetic functions
+> - Basic Arithmetic functions i.e add,sub,mul,div,modulus.
 > - Simple UI Grid layout
 > - Fix for app crashing on prolonged click
-> - Format of numbers.
+
 
 For more detail read Version_0.1.0.md file
 

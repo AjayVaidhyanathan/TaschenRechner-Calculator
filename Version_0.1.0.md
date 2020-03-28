@@ -14,6 +14,15 @@
 
  ---
 
+
+ ### Recent Updates
+ 1. Formating numbers to avoid unnecessary float values i.e. 5 + 5 = 10.0 without Formating
+          format.format(result).toString();
+ 2. Removal of modulus functions
+ 
+
+
+
  ## Architecture:
 
  Layouts:
@@ -63,8 +72,8 @@ java:
        txtInput.getText(.length()! = 0)
 
  When input value is not present this statement doesnt get triggered. After entering the if loop we need to capture the number for that,
-       m1 = Float.parseFloat((txtInput.getText() + ""));
-       fadd = true;
+          m1 = Float.parseFloat((txtInput.getText() + ""));
+          fadd = true;
 
   Now we use boolean to identify values for cases which we are going to be used earlier. The additional use of the above line is that on continous clicking of any operator other than a number instantly closes the app, hence it prevents also from crashing . This logic is used for all operator.        
 

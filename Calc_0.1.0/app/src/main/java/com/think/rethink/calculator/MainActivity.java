@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         btSub = findViewById(R.id.btSub);
         btMul = findViewById(R.id.btMul);
         btDiv = findViewById(R.id.btDiv);
-        btPercentage = findViewById(R.id.btPercentage);
 
         btEql = findViewById(R.id.btEql);
         btClr = findViewById(R.id.btClr);
@@ -176,17 +175,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btPercentage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (txtInput.getText().length() != 0) {
-                    m1 = Float.parseFloat((txtInput.getText() + ""));
-                    fPercent = true;
-                    decimal = false;
-                    txtInput.setText(null);
-                }
-            }
-        });
 
         btDot.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -228,10 +216,6 @@ public class MainActivity extends AppCompatActivity {
                     value = format.format(Result).toString();
                     txtOutput.setText(value);
                     fDiv = false;
-                }
-                if (fPercent){
-                    txtOutput.setText((m1 * (m2/100)+ ""));
-                    fPercent = false;
                 }
 
             }
