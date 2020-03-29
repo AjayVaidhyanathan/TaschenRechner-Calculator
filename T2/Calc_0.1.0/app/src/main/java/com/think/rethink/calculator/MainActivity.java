@@ -3,21 +3,29 @@ package com.think.rethink.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
-    Button btPercentage,btDiv,btClr,bt0,bt1,bt2,bt3,bt4,bt5,bt6,bt7,bt8,bt9,btMul,btSub,btPlus,btDot,btEql;
+public class MainActivity<editText> extends AppCompatActivity {
+
+    Button btPercentage,btDiv,btClr,bt0,bt1,bt2,bt3,bt4,bt5,bt6,bt7,bt8,bt9,btMul,btSub,btPlus,btDot,btEql,btBack;
     TextView txtInput,txtOutput;
     boolean fAdd,fSub,fMul,fDiv,fPercent,decimal;
-    Float m1,m2;
+    Float m1,m2,Result;
+    NumberFormat format;
+    String value,str ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        format = new DecimalFormat("#.###");
 
         bt0 = findViewById(R.id.bt0);
         bt1 = findViewById(R.id.bt1);
@@ -35,19 +43,37 @@ public class MainActivity extends AppCompatActivity {
         btSub = findViewById(R.id.btSub);
         btMul = findViewById(R.id.btMul);
         btDiv = findViewById(R.id.btDiv);
-        btPercentage = findViewById(R.id.btPercentage);
 
         btEql = findViewById(R.id.btEql);
         btClr = findViewById(R.id.btClr);
+        btBack= findViewById(R.id.btBack);
+        editText edit;
 
         txtInput = findViewById(R.id.txtInput);
         txtOutput = findViewById(R.id.txtOutput);
+
 
         btClr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 txtInput.setText(null);
                 txtOutput.setText(null);
+            }
+        });
+
+        btBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                str = txtInput.getText().toString();
+                if (str.length() > 1 )
+                {
+                    str = str.substring(0,str.length() - 1);
+                    txtInput.setText(str);
+
+
+                }
+                else
+                    txtInput.setText(null);
             }
         });
 
@@ -169,17 +195,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btPercentage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (txtInput.getText().length() != 0) {
-                    m1 = Float.parseFloat((txtInput.getText() + ""));
-                    fPercent = true;
-                    decimal = false;
-                    txtInput.setText(null);
-                }
-            }
-        });
 
         btDot.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -199,25 +214,30 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 m2 = Float.parseFloat(txtInput.getText() + "");
                 if (fAdd){
-                    txtOutput.setText((m1 + m2 + ""));
+                    Result = m1 + m2;
+                    value = format.format(Result).toString();
+                    txtOutput.setText(value);
                     fAdd = false;
                 }
                 if (fSub){
-                    txtOutput.setText((m1 - m2 + ""));
+                    Result = m1 - m2;
+                    value = format.format(Result).toString();
+                    txtOutput.setText(value);
                     fSub = false;
                 }
                 if (fMul){
-                    txtOutput.setText((m1 * m2 + ""));
+                    Result = m1 * m2;
+                    value = format.format(Result).toString();
+                    txtOutput.setText(value);
                     fMul = false;
                 }
                 if (fDiv){
-                    txtOutput.setText((m1 / m2 + ""));
+                    Result = m1 / m2;
+                    value = format.format(Result).toString();
+                    txtOutput.setText(value);
                     fDiv = false;
                 }
-                if (fPercent){
-                    txtOutput.setText((m1 * (m2/100)+ ""));
-                    fPercent = false;
-                }
+                txtInput.setText(null);
 
             }
         });
