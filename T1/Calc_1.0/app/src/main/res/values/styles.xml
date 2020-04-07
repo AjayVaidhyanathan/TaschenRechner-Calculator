@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- light theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="BgColor">@color/lightBg</item>
+        <item name="BtColor">@color/lightBtColor</item>
+        <item name="BtColorLarge">@color/lightBtColorLarge</item>
+        <item name="BtColorMedium">@color/lightBtColorMedium</item>
+        <item name="TxtColorLarge">@color/lightTxtColorLarge</item>
+        <item name="TxtColorSmall">@color/lightTxtColorSmall</item>
+
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTrans</item>
+
+    </style>
+    <!-- dark theme -->
+    <style name="darkTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="BgColor">@color/darkBg</item>
+        <item name="BtColor">@color/darkBtColor</item>
+        <item name="BtColorLarge">@color/darkBtColorLarge</item>
+        <item name="BtColorMedium">@color/darkBtColorMedium</item>
+        <item name="TxtColorLarge">@color/darkTxtColorLarge</item>
+        <item name="TxtColorSmall">@color/darkTxtColorSmall</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTrans</item>
+    </style>
+
+    <style name="WindowAnimationTrans">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+</resources>
