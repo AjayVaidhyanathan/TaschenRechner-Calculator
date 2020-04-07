@@ -112,15 +112,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onClickClear(View v){
-        stxtInput="";
-        stxtOutput="";
-        current_operator="";
-        num1="";
-        numOne=0.0;
-        pt=0.0;
-        Result=0.0;
-        update();
+        cleardata();
+    }
 
+    public void cleardata() {
+        stxtInput = "";
+        stxtOutput = "";
+        current_operator = "";
+        num1 = "";
+        Result = 0.0;
+        numOne = 0.0;
+        pt = 0.0;
+        update();
+        decimal = false;
     }
 
     public void onClickEqual(View v){
@@ -134,6 +138,144 @@ public class MainActivity extends AppCompatActivity {
         update();
 
     }
+
+    private char getcharfromLast(String s, int i) {
+        char c = s.charAt(s.length() - i);
+        return c;
+    }
+
+    public void removeuntilchar(String str, char chr) {
+        char c = getcharfromLast(str, 1);
+        if (c != chr) {
+            str = removechar(str, 1);
+            stxtInput = str;
+            update();
+            removeuntilchar(str, chr);
+        }
+    }
+
+    public String removechar(String str, int i) {
+        char c = str.charAt(str.length() - i);
+        //we need to check if dot is removed or not
+        if (c == '.' && !decimal) {
+            decimal = false;
+        }
+
+        if (c == ' ') {
+            return str.substring(0, str.length() - (i - 1));
+        }
+        return str.substring(0, str.length() - i);
+    }
+
+    public void onClickDelete(View view) {
+
+        if (stxtOutput != "") {
+            if (getcharfromLast(stxtInput, 1) != ' ') {
+                if (num1.length() < 2 && current_operator != "") {
+                    num1 = "";
+                    pt = Result;
+                    stxtOutput = format.format(Result).toString();
+                    stxtInput = removechar(stxtInput, 1);
+                    update();
+                } else {
+                    switch (current_operator) {
+                        case "":
+
+                            if (stxtInput.length() < 2) {
+                                cleardata();
+                            } else {
+                                if (getcharfromLast(stxtInput, 1) == '.') {
+                                    decimal = false;
+                                }
+                                num1 = removechar(num1, 1);
+                                numOne = Double.parseDouble(num1);
+                                pt = numOne;
+                                stxtInput = num1;
+                                stxtOutput = num1;
+
+                                update();
+                            }
+                            break;
+
+                        case "+":
+
+                            if (getcharfromLast(stxtInput, 1) == '.') {
+                                decimal = false;
+                            }
+                            num1 = removechar(num1, 1);
+                            if (num1.length() == 1 && num1 == ".") {
+                                numOne = Double.parseDouble(num1);
+                            }
+                            numOne = Double.parseDouble(num1);
+                            pt = Result + numOne;
+                            stxtOutput = format.format(pt).toString();
+                            stxtInput = removechar(stxtInput, 1);
+
+                            update();
+                            break;
+
+                        case "-":
+
+                            if (getcharfromLast(stxtInput, 1) == '.') {
+                                decimal = false;
+                            }
+                            num1 = removechar(num1, 1);
+                            if (num1.length() == 1 && num1 == ".") {
+                                numOne = Double.parseDouble(num1);
+                            }
+                            numOne = Double.parseDouble(num1);
+                            pt = Result - numOne;
+                            stxtOutput = format.format(pt).toString();
+                            stxtInput = removechar(stxtInput, 1);
+
+                            update();
+                            break;
+
+                        case "x":
+
+                            if (getcharfromLast(stxtInput, 1) == '.') {
+                                decimal = false;
+                            }
+                            num1 = removechar(num1, 1);
+                            if (num1.length() == 1 && num1 == ".") {
+                                numOne = Double.parseDouble(num1);
+                            }
+                            numOne = Double.parseDouble(num1);
+                            pt = Result * numOne;
+                            stxtOutput = format.format(pt).toString();
+                            stxtInput = removechar(stxtInput, 1);
+
+                            update();
+                            break;
+
+                        case "/":
+                            try {
+
+                                if (getcharfromLast(stxtInput, 1) == '.') {
+                                    decimal = false;
+                                }
+                                num1 = removechar(num1, 1);
+                                if (num1.length() == 1 && num1 == ".") {
+                                    numOne = Double.parseDouble(num1);
+                                }
+                                numOne = Double.parseDouble(num1);
+                                pt = Result / numOne;
+                                stxtOutput = format.format(pt).toString();
+                                stxtInput = removechar(stxtInput, 1);
+
+                            } catch (Exception e) {
+                                stxtOutput = e.getMessage();
+                            }
+                            update();
+                            break;
+                    }
+                }
+            }
+        }
+    }
+
+
+
 
 
     public void update(){

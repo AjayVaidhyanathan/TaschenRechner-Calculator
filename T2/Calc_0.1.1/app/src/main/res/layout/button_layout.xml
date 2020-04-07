@@ -31,13 +31,13 @@
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:layout_row="0"
-            android:layout_column="2"
-            android:layout_columnSpan="2"
+            android:layout_column="3"
+            android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@color/Brownish"
             android:fontFamily="sans-serif-condensed-light"
             android:onClick="onClickClear"
-            android:text="@string/clear"
+            android:text="@string/C"
             android:textColor="@color/White"
             android:textSize="25sp" />
 
@@ -250,6 +250,20 @@
             android:fontFamily="sans-serif-condensed-light"
             android:text="@string/equal"
             android:onClick="onClickEqual"
+            android:textColor="@color/White"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btDel"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:background="@color/Brownish"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="@string/Del"
+            android:onClick="onClickDelete"
             android:textColor="@color/White"
             android:textSize="25sp" />
 
