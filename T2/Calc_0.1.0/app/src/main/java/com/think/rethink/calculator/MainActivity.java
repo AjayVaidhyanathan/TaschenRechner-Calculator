@@ -3,7 +3,6 @@ package com.think.rethink.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,14 +10,14 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-public class MainActivity<editText> extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
-    Button btPercentage,btDiv,btClr,bt0,bt1,bt2,bt3,bt4,bt5,bt6,bt7,bt8,bt9,btMul,btSub,btPlus,btDot,btEql,btBack;
+    Button btPercentage,btDiv,btClr,bt0,bt1,bt2,bt3,bt4,bt5,bt6,bt7,bt8,bt9,btMul,btSub,btPlus,btDot,btEql;
     TextView txtInput,txtOutput;
     boolean fAdd,fSub,fMul,fDiv,fPercent,decimal;
     Float m1,m2,Result;
     NumberFormat format;
-    String value,str ;
+    String value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,34 +45,15 @@ public class MainActivity<editText> extends AppCompatActivity {
 
         btEql = findViewById(R.id.btEql);
         btClr = findViewById(R.id.btClr);
-        btBack= findViewById(R.id.btBack);
-        editText edit;
 
         txtInput = findViewById(R.id.txtInput);
         txtOutput = findViewById(R.id.txtOutput);
-
 
         btClr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 txtInput.setText(null);
                 txtOutput.setText(null);
-            }
-        });
-
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                str = txtInput.getText().toString();
-                if (str.length() > 1 )
-                {
-                    str = str.substring(0,str.length() - 1);
-                    txtInput.setText(str);
-
-
-                }
-                else
-                    txtInput.setText(null);
             }
         });
 
@@ -237,7 +217,6 @@ public class MainActivity<editText> extends AppCompatActivity {
                     txtOutput.setText(value);
                     fDiv = false;
                 }
-                txtInput.setText(null);
 
             }
         });

@@ -10,15 +10,13 @@
         android:rowCount="5"
         android:columnCount="6">
 
-
-
         <Button
             android:id="@+id/btDiv"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:layout_row="0"
             android:layout_column="0"
-            android:layout_columnSpan="1"
+            android:layout_columnSpan="2"
             android:layout_columnWeight="1"
             android:background="@color/Brownish"
             android:fontFamily="sans-serif-condensed-light"
@@ -56,7 +54,7 @@
         <Button
             android:id="@+id/bt8"
             android:layout_width="wrap_content"
-            android:layout_height="99dp"
+            android:layout_height="100dp"
             android:layout_row="1"
             android:layout_column="1"
             android:layout_columnWeight="1"
@@ -159,8 +157,8 @@
 
         <Button
             android:id="@+id/bt2"
-            android:layout_width="131dp"
-            android:layout_height="99dp"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
             android:layout_row="3"
             android:layout_column="1"
             android:layout_columnWeight="1"
@@ -234,19 +232,6 @@
             android:background="@color/Brownish"
             android:fontFamily="sans-serif-condensed-light"
             android:text="="
-            android:textColor="@color/White"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/btBack"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:background="@color/Brownish"
-            android:fontFamily="sans-serif-condensed-light"
-            android:text="Del"
             android:textColor="@color/White"
             android:textSize="25sp" />
 
