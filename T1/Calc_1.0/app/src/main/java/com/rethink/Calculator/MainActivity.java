@@ -129,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     public void OnClickDot(View v){
         if (!decimal) {
             if (sValue.length() == 0) {

@@ -3,7 +3,6 @@
     <dimen name="btnWidth">66dp</dimen>
     <dimen name="btnHeight">65dp</dimen>
     <dimen name="btnWidthLarge">148dp</dimen>
-    <dimen name="btnSmallWidth">44dp</dimen>
 
     <dimen name="btnText">18sp</dimen>
 </resources>

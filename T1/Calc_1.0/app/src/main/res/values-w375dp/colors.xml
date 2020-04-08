@@ -10,7 +10,6 @@
     <color name="lightBtColorMedium">#47cacc</color>
     <color name="lightTxtColorLarge">#5a676f</color>
     <color name="lightTxtColorSmall">#b3bcc2</color>
-    <color name="lightBtColorSmall">#ffbe88</color>
 
     <color name="darkBg">#383839</color>
     <color name="darkBtColor">#515457</color>
@@ -18,6 +17,6 @@
     <color name="darkBtColorMedium">#a0ebef</color>
     <color name="darkTxtColorLarge">#a5aead</color>
     <color name="darkTxtColorSmall">#737272</color>
-    <color name="darkBtColorSmall">#fcbd8b</color>
+
 
 </resources>
