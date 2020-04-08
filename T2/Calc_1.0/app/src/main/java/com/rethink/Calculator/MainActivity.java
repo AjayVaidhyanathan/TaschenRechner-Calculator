@@ -63,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }   //void function for light/dark theme
 
-        public void update(){
-            Intent i = new Intent(getApplicationContext(),MainActivity.class);
-            startActivity(i);
-            finish();
-        }
+    public void update(){
+        Intent i = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(i);
+        finish();
+    }
 
 
     public void OnClickNum(View v){
