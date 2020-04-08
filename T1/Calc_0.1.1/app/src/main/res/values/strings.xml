@@ -20,5 +20,6 @@
     <string name="dot">.</string>
     <string name="equal">=</string>
     <string name="clear">CE</string>
+    <string name="del">Del</string>
 
 </resources>
