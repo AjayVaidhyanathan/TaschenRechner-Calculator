@@ -26,7 +26,7 @@
     <string name="memClr"> MC </string>
     <string name="memAdd"> M+ </string>
     <string name="memRemove"> MR </string>
-    <string name="memSub"> M- </string>
+    <string name="xsquare"> <html>x<sup>2</sup></html> </string>
 
 
 

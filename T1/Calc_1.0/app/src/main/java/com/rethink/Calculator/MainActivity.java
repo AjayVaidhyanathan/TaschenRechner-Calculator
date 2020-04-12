@@ -17,10 +17,10 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
     TextView txtInput, txtOutput;
-    String sTxtInp="",sTxtOut="",sValue="",sOpt="",str;
+    String sTxtInp="",sTxtOut="",sValue="",sOpt="";
     Double Value=0.0, Value2=0.0, Result=0.0;
     NumberFormat format;
-    Boolean decimal = false, del = false;
+    Boolean decimal = false;
 
 
     private Switch btswitch;
@@ -79,28 +79,28 @@ public class MainActivity extends AppCompatActivity {
         switch (sOpt){
             case "":
                 Value2 = Result + Value;
-                sTxtOut= format.format(Value2).toString();
+                sTxtOut= format.format(Value2);
                 break;
 
             case "+":
                 Value2 = Result + Value;
-                sTxtOut = format.format(Value2).toString();
+                sTxtOut = format.format(Value2);
                 break;
 
             case "-":
                 Value2 = Result-Value;
-                sTxtOut = format.format(Value2).toString();
+                sTxtOut = format.format(Value2);
                 break;
 
             case "x":
                 Value2 = Result * Value;
-                sTxtOut = format.format(Value2).toString();
+                sTxtOut = format.format(Value2);
                 break;
 
             case "/":
                 try {
                     Value2 = Result / Value;
-                    sTxtOut = format.format(Value2).toString();
+                    sTxtOut = format.format(Value2);
 
                 }catch (Exception e){
                     sTxtOut=e.getMessage();
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 sValue = "";
                 Value = 0.0;
                 Result = Value2;
-                sTxtOut = format.format(Value2).toString();
+                sTxtOut = format.format(Value2);
                 sOpt = opt.getText().toString();
                 decimal = false;
                 calc();
@@ -149,6 +149,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void OnClickClr(View v){
+        Cleardata();
+    }
+
+    public void Cleardata(){
         sTxtInp="";
         sTxtOut="";
         sOpt="";
@@ -157,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
         Value2=0.0;
         Result=0.0;
         calc();
-
     }
     public void OnClickEql(View v){
         sTxtInp="";
@@ -169,6 +172,22 @@ public class MainActivity extends AppCompatActivity {
         Result=0.0;
         calc();
 
+    }
+    private char getcharfromlast(String s, int i)
+    {
+        char c = s.charAt(s.length() - i);
+        return c;
+    }
+
+    public String removechar(String str, int i) {
+        char c = str.charAt(str.length() - i);
+        if (c == '.' && !decimal) {
+            decimal = true;
+        }
+        if (c == ' ') {
+            return str.substring(0, str.length() - (i - 1));
+        }
+        return str.substring(0, str.length() - i);
     }
 
 
