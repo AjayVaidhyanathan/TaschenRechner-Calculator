@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">Conversions</string>
+    <string name="Dot">.</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+
+    <string name="Equal"> = </string>
+    <string name="plus"> + </string>
+    <string name="sub"> - </string>
+    <string name="mul"> x </string>
+    <string name="div"> / </string>
+    <string name="percent"> % </string>
+    <string name="clear"> C </string>
+    <string name="del"> del </string>
+    <string name="convo">CONVO</string>
+
+    <string-array name="Length">
+        <item>light year</item>
+        <item>Decimeter</item>
+        <item>micrometer</item>
+        <item>millimeters</item>
+        <item>AstronomicalUnit</item>
+        <item>meters</item>
+        <item>kilometers</item>
+        <item>centimeters</item>
+        <item>lunar distance</item>
+        <item>parsec</item>
+        <item>picometer</item>
+        <item>nanometer</item>
+        <item>inches</item>
+        <item>feet</item>
+        <item>yards</item>
+        <item>miles</item>
+    </string-array>
+
+    <string-array name="Area">
+        <item>Square Inches</item>
+        <item>Square Feet</item>
+        <item>Square Yards</item>
+        <item>Square Miles</item>
+        <item>Square Meters</item>
+        <item>Square Kilometers</item>
+        <item>Acres</item>
+    </string-array>
+    <string-array name="force_units">
+        <item>Newtons</item>
+        <item>Pound Force</item>
+    </string-array>
+    <string-array name="mass_units">
+        <item>Pounds</item>
+        <item>Kilograms</item>
+        <item>Grams</item>
+        <item>Milligrams</item>
+    </string-array>
+    <string-array name="pressure_units">
+        <item>Torr</item>
+        <item>Atm</item>
+        <item>mmHg</item>
+        <item>Bar</item>
+        <item>Pascals</item>
+    </string-array>
+    <string-array name="speed_units">
+        <item>Miles per Hour</item>
+        <item>Feet per Second</item>
+        <item>Meters per Second</item>
+        <item>Kilometers per Second</item>
+        <item>Kilometers per Hour</item>
+    </string-array>
+    <string-array name="temp_units">
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+    <string-array name="time_units">
+        <item>Seconds</item>
+        <item>Minutes</item>
+        <item>Hours</item>
+        <item>Days</item>
+        <item>Weeks</item>
+        <item>Months</item>
+        <item>Years</item>
+    </string-array>
+    <string-array name="volume_units">
+        <item>Milliliter</item>
+        <item>Liter</item>
+        <item>Kiloliter</item>
+        <item>Pint</item>
+        <item>Quart</item>
+        <item>Gallon</item>
+        <item>Cup</item>
+    </string-array>
+    <string-array name="metric_units">
+        <item>Yotta (10^24)</item>
+        <item>Zeta (10^21)</item>
+        <item>Exa (10^18)</item>
+        <item>Peta (10^15)</item>
+        <item>Tera (10^12)</item>
+        <item>Giga (10^9)</item>
+        <item>Mega (10^6)</item>
+        <item>Kilo (10^3)</item>
+        <item>Hecto (10^2)</item>
+        <item>Deka (10^1)</item>
+        <item>Unit (10^0)</item>
+        <item>Deci (10^-1)</item>
+        <item>Centi (10^-2)</item>
+        <item>Milli (10^-3)</item>
+        <item>Micro (10^-6)</item>
+        <item>Nano (10^-9)</item>
+        <item>Pico (10^-12)</item>
+        <item>Femto (10^-15)</item>
+        <item>Atto (10^-18)</item>
+        <item>Zepto (10^-21)</item>
+        <item>Yocto (10^-24)</item>
+    </string-array>
+
+</resources>

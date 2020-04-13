@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="412dp"
+    android:layout_height="match_parent"
+    android:background="?attr/BgColor"
+    tools:context=".MainActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <!-- First layer !-->
+    <Button
+        android:id="@+id/btplusorminus"
+        android:layout_width="@dimen/btnSmallWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="29dp"
+        android:background="@drawable/btn_small"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/plusorminus"
+        android:onClick="OnClickNum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/btn0"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="77dp"
+        android:layout_marginBottom="29dp"
+        android:background="@drawable/default_btn"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/zero"
+        android:onClick="OnClickNum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnDot"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="29dp"
+        android:text="@string/Dot"
+        android:onClick="OnClickDot"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnEql"
+        android:layout_width="@dimen/btnWidthLarge_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="203dp"
+        android:layout_marginBottom="29dp"
+        android:text="@string/Equal"
+        android:onClick="OnClickEql"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/btn_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSin"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="329dp"
+        android:layout_marginBottom="29dp"
+        android:background="@drawable/btn_operator"
+        android:fontFamily="@font/open_sans_light"
+        android:onClick="onClickFunction"
+        android:text="@string/Sin"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!-- Second layer !-->
+
+
+    <Button
+        android:id="@+id/bt_pi"
+        android:layout_width="@dimen/btnSmallWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="96dp"
+        android:background="@drawable/btn_small"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/pi"
+        android:onClick="OnClickNum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="77dp"
+        android:layout_marginBottom="96dp"
+        android:text="@string/one"
+        android:onClick="OnClickNum"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="96dp"
+        android:text="@string/two"
+        android:onClick="OnClickNum"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="203dp"
+        android:layout_marginBottom="96dp"
+        android:text="@string/three"
+        android:onClick="OnClickNum"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnPlus"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="266dp"
+        android:layout_marginBottom="96dp"
+        android:text="@string/plus"
+        android:onClick="OnClickOpt"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/btn_operator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSininv"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="329dp"
+        android:layout_marginBottom="96dp"
+        android:background="@drawable/btn_operator"
+        android:fontFamily="@font/open_sans_light"
+        android:onClick="onClickFunction"
+        android:text="@string/sinInv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Third layer !-->
+    <Button
+        android:id="@+id/btn_inverse"
+        android:layout_width="@dimen/btnSmallWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="163dp"
+        android:background="@drawable/btn_small"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/inverse"
+        android:onClick="OnClickNum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="77dp"
+        android:layout_marginBottom="163dp"
+        android:text="@string/four"
+        android:onClick="OnClickNum"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="163dp"
+        android:text="@string/five"
+        android:onClick="OnClickNum"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="203dp"
+        android:layout_marginBottom="163dp"
+        android:text="@string/six"
+        android:onClick="OnClickNum"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnMinus"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="266dp"
+        android:layout_marginBottom="163dp"
+        android:text="@string/sub"
+        android:onClick="OnClickOpt"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/btn_operator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCos"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="329dp"
+        android:layout_marginBottom="163dp"
+        android:background="@drawable/btn_operator"
+        android:fontFamily="@font/open_sans_light"
+        android:onClick="onClickFunction"
+        android:text="@string/Cos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Fourth layer !-->
+    <Button
+        android:id="@+id/btn_root"
+        android:layout_width="@dimen/btnSmallWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="230dp"
+        android:background="@drawable/btn_small"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/root"
+        android:onClick="onRootClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="77dp"
+        android:layout_marginBottom="230dp"
+        android:text="@string/seven"
+        android:onClick="OnClickNum"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="230dp"
+        android:text="@string/eight"
+        android:onClick="OnClickNum"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="203dp"
+        android:layout_marginBottom="230dp"
+        android:text="@string/nine"
+        android:onClick="OnClickNum"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnMul"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="266dp"
+        android:layout_marginBottom="230dp"
+        android:background="@drawable/btn_operator"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/mul"
+        android:onClick="OnClickOpt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCosInv"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="329dp"
+        android:layout_marginBottom="230dp"
+        android:background="@drawable/btn_operator"
+        android:fontFamily="@font/open_sans_light"
+        android:onClick="onClickFunction"
+        android:text="@string/CosInv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Fifth layer !-->
+    <Button
+        android:id="@+id/btn_square"
+        android:layout_width="@dimen/btnSmallWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="297dp"
+        android:background="@drawable/btn_small"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/xsquare"
+        android:onClick="onSquareClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnClr"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="77dp"
+        android:layout_marginBottom="297dp"
+        android:background="@drawable/default_btn"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/clear"
+        android:onClick="onClickClear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnDel"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="297dp"
+        android:text="@string/del"
+        android:fontFamily="@font/open_sans_light"
+        android:onClick="onClickDelete"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnPercent"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="203dp"
+        android:layout_marginBottom="297dp"
+        android:text="@string/percent"
+        android:onClick="onModuloClick"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnDiv"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="266dp"
+        android:layout_marginBottom="297dp"
+        android:background="@drawable/btn_operator"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/div"
+        android:onClick="OnClickOpt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btntan"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="329dp"
+        android:layout_marginBottom="297dp"
+        android:background="@drawable/btn_operator"
+        android:fontFamily="@font/open_sans_light"
+        android:onClick="onClickFunction"
+        android:text="@string/tan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- sixth layer !-->
+    <Button
+        android:id="@+id/btn_RorD"
+        android:layout_width="@dimen/btnSmallWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="364dp"
+        android:background="@drawable/btn_small"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/rod"
+        android:onClick="OnClickNum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnE"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="77dp"
+        android:layout_marginBottom="364dp"
+        android:background="@drawable/default_btn"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/E"
+        android:onClick="onClickPIorE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnlog"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="364dp"
+        android:text="@string/log"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        android:onClick="onClickFunction"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnPower"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="203dp"
+        android:layout_marginBottom="364dp"
+        android:text="@string/Power"
+        android:onClick="onPowerClick"
+        android:fontFamily="@font/open_sans_light"
+        android:background="@drawable/default_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnFact"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="266dp"
+        android:layout_marginBottom="364dp"
+        android:background="@drawable/btn_operator"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/fact"
+        android:onClick="onClickFactorial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btntaninv"
+        android:layout_width="@dimen/btnWidth_smallsize"
+        android:layout_height="@dimen/btnHeight_smallsize"
+        android:layout_marginStart="329dp"
+        android:layout_marginBottom="364dp"
+        android:background="@drawable/btn_operator"
+        android:fontFamily="@font/open_sans_light"
+        android:onClick="onClickFunction"
+        android:text="@string/taninv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- End of button function !-->
+
+    <Switch
+        android:id="@+id/mySwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="340dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnClr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.168" />
+
+    <TextView
+        android:id="@+id/txtOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="120dp"
+        android:textColor="?attr/TxtColorLarge"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDiv"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="?attr/TxtColorSmall"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtOutput"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

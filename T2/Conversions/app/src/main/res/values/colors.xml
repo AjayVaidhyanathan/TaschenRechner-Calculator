@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="lightBg">#e8e8ed</color>
+    <color name="lightBtColor">#fafafa</color>
+    <color name="lightBtColorLarge">#86e3ce</color>
+    <color name="lightBtColorMedium">#47cacc</color>
+    <color name="lightTxtColorLarge">#5a676f</color>
+    <color name="lightTxtColorSmall">#b3bcc2</color>
+
+    <color name="darkBg">#383839</color>
+    <color name="darkBtColor">#515457</color>
+    <color name="darkBtColorLarge">#47cacc</color>
+    <color name="darkBtColorMedium">#a0ebef</color>
+    <color name="darkTxtColorLarge">#a5aead</color>
+    <color name="darkTxtColorSmall">#737272</color>
+
+</resources>

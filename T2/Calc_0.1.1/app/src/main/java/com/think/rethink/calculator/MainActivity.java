@@ -14,8 +14,8 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
     TextView txtInput, txtOutput;
-    String stxtInput="",stxtOutput="",num1="",current_operator="";
-    Double numOne=0.0,pt=0.0,Result=0.0;
+    String stxtInput = "", stxtOutput = "", num1 = "", current_operator = "";
+    Double numOne = 0.0, pt = 0.0, Result = 0.0;
     NumberFormat format;
     Boolean decimal = false;
 
@@ -25,22 +25,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtInput=findViewById(R.id.txtInput);
-        txtOutput=findViewById(R.id.txtOutput);
+        txtInput = findViewById(R.id.txtInput);
+        txtOutput = findViewById(R.id.txtOutput);
 
         format = new DecimalFormat("#.####");
 
     }
 
-    public void onClickNumber(View v){
+    public void onClickNumber(View v) {
         Button n = (Button) v;
         stxtInput += n.getText();
         num1 += n.getText();
         numOne = Double.parseDouble(num1);
-        switch (current_operator){
+        switch (current_operator) {
             case "":
-                pt = Result+numOne;
-                stxtOutput= format.format(pt).toString();
+                pt = Result + numOne;
+                stxtOutput = format.format(pt).toString();
                 break;
 
             case "+":
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case "-":
-                pt = Result-numOne;
+                pt = Result - numOne;
                 stxtOutput = format.format(pt).toString();
                 break;
 
@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
                     pt = Result / numOne;
                     stxtOutput = format.format(pt).toString();
 
-                }catch (Exception e){
-                    stxtOutput=e.getMessage();
+                } catch (Exception e) {
+                    stxtOutput = e.getMessage();
                 }
                 break;
         }
@@ -73,25 +73,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onClickOperator(View v){
+    public void onClickOperator(View v) {
         Button op = (Button) v;
-            if (stxtOutput != "") {
-                if (current_operator != "" ) {
-                }else {
-                    stxtInput += op.getText();
-                    num1 = "";
-                    numOne = 0.0;
-                    Result = pt;
-                    stxtOutput = format.format(pt).toString();
-                    current_operator = op.getText().toString();
-                    decimal = false;
-                    update();
-                }
+        if (stxtOutput != "") {
+            if (current_operator != "") {
+            } else {
+                stxtInput += op.getText();
+                num1 = "";
+                numOne = 0.0;
+                Result = pt;
+                stxtOutput = format.format(pt).toString();
+                current_operator = op.getText().toString();
+                decimal = false;
+                update();
             }
+        }
     }
 
 
-    public void onDotClick(View v){
+    public void onDotClick(View v) {
         if (!decimal) {
             if (num1.length() == 0) {
                 stxtInput += "0.";
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 num1 += "0.";
                 decimal = true;
                 update();
-            }else{
+            } else {
                 stxtInput += ".";
                 stxtOutput += ".";
                 num1 += ".";
@@ -108,10 +108,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-       }
+    }
 
 
-    public void onClickClear(View v){
+    public void onClickClear(View v) {
         cleardata();
     }
 
@@ -127,14 +127,14 @@ public class MainActivity extends AppCompatActivity {
         decimal = false;
     }
 
-    public void onClickEqual(View v){
-        stxtInput="";
-        stxtOutput= format.format(pt);
-        current_operator="";
-        num1="";
-        numOne=0.0;
-        pt=0.0;
-        Result=0.0;
+    public void onClickEqual(View v) {
+        stxtInput = "";
+        stxtOutput = format.format(pt);
+        current_operator = "";
+        num1 = "";
+        numOne = 0.0;
+        pt = 0.0;
+        Result = 0.0;
         update();
 
     }
@@ -171,13 +171,14 @@ public class MainActivity extends AppCompatActivity {
 
         if (stxtOutput != "") {
             if (getcharfromLast(stxtInput, 1) != ' ') {
+
                 if (num1.length() < 2 && current_operator != "") {
                     num1 = "";
                     pt = Result;
                     stxtOutput = format.format(Result).toString();
                     stxtInput = removechar(stxtInput, 1);
                     update();
-                } else {
+                }  else {
                     switch (current_operator) {
                         case "":
 
@@ -269,18 +270,17 @@ public class MainActivity extends AppCompatActivity {
                             update();
                             break;
                     }
+
+
                 }
             }
         }
     }
 
 
+        public void update() {
+            txtInput.setText(stxtInput);
+            txtOutput.setText(stxtOutput);
 
-
-
-    public void update(){
-        txtInput.setText(stxtInput);
-        txtOutput.setText(stxtOutput);
-
+        }
     }
-}

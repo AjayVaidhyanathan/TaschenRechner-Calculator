@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="25dp"
+        android:layout_weight="1"
+        android:text="CONVERSIONS"
+        android:textSize="30sp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".Conv">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Length"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="150dp"
+            android:drawableTop="@drawable/length_img"
+            android:text="Length"
+            android:textSize="18sp"
+            android:onClick="onclickLength"/>
+
+        <Button
+            android:id="@+id/Area"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="150dp"
+            android:drawableTop="@drawable/area"
+            android:text="Area"
+            android:onClick="onclickArea"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/Volume"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="150dp"
+            android:drawableTop="@drawable/vol_img"
+            android:onClick="onclickVolume"
+            android:textSize="18sp"
+            android:text="Volume"/>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Speed"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="75dp"
+            android:drawableTop="@drawable/speed_img"
+android:onClick="onclickSpeed"
+            android:text="Speed"
+            android:textSize="18sp"/>
+
+
+        <Button
+            android:id="@+id/Weight"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="75dp"
+            android:drawableTop="@drawable/weight_img"
+android:onClick="onclickTime"
+            android:textSize="18sp"
+            android:text="Time"/>
+        <Button
+            android:id="@+id/Temperature"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="75dp"
+            android:drawableTop="@drawable/temp_img"
+android:onClick="onclickTemperature"
+            android:text="Temp"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Force"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="75dp"
+            android:drawableTop="@drawable/power_img"
+android:onClick="onclickForce"
+            android:textSize="18sp"
+            android:text="Force"/>
+
+        <Button
+        android:id="@+id/Pressure"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="75dp"
+        android:drawableTop="@drawable/press_img"
+        android:onClick="onclickPressure"
+        android:text="Pressure"
+        android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/Mass"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="75dp"
+            android:drawableTop="@drawable/press_img"
+            android:onClick="onclickMass"
+            android:text="Mass"
+            android:textSize="15sp"/>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+</RelativeLayout>

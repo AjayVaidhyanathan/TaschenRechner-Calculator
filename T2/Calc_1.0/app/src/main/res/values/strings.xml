@@ -22,9 +22,29 @@
     <string name="clear"> C </string>
     <string name="del"> del </string>
 
-
-
-
+    <string name="memSave"> MS </string>
+    <string name="memClr"> MC </string>
+    <string name="memAdd"> M+ </string>
+    <string name="memRemove"> MR </string>
+    <string name="memSub"> M- </string>
+    <string name="pie">∏</string>
+    <string name="sqrt">√</string>
+    <string name="log">log</string>
+    <string name="ln">ln</string>
+    <string name="taninv">tanˉ1</string>
+    <string name="E">e</string>
+    <string name="sinInv">sinˉ1</string>
+    <string name="Sin">sin</string>
+    <string name="CosInv">cosˉ1</string>
+    <string name="Cos">cos</string>
+    <string name="tan">tan</string>
+    <string name="rod">Rad</string>
+    <string name="root">√x</string>
+    <string name="plusorminus">+/-</string>
+    <string name="pi">π</string>
+    <string name="inverse">1/x</string>
+    <string name="Power">^</string>
+    <string name="fact">n!</string>
 
 
 </resources>

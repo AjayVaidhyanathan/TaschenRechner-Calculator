@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ds">
+        <attr name="BgColor" format="color"/>
+        <attr name="BtColor" format="color"/>
+        <attr name="BtColorLarge" format="color"/>
+        <attr name="BtColorMedium" format="color"/>
+        <attr name="TxtColorLarge" format="color"/>
+        <attr name="TxtColorSmall" format="color"/>
+        <attr name="BtColorSmall" format="color"/>
+    </declare-styleable>
+</resources>
