@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         Value = Double.parseDouble(sValue);
         switch (sOpt){
             case "":
-                Value2 = Result + Value;
+                Value2 = Value;
                 sTxtOut= format.format(Value2);
                 break;
 

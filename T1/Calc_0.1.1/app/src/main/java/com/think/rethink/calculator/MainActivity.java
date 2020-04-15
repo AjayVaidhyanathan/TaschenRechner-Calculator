@@ -1,23 +1,28 @@
 package com.think.rethink.calculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.text.DecimalFormat;
-import java.text.Format;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView txtInput, txtOutput;
-    String stxtInput="",stxtOutput="",num1="",current_operator="";
+    String stxtInput="";
+    String stxtOutput="";
+    String num1="";
+    String current_operator="";
     Double numOne=0.0,pt=0.0,Result=0.0;
     NumberFormat format;
     Boolean decimal = false, opt = false;
+    Character c;
 
 
     @Override
@@ -36,10 +41,11 @@ public class MainActivity extends AppCompatActivity {
         Button n = (Button) v;
         stxtInput += n.getText();
         num1 += n.getText();
-        numOne = Double.parseDouble(num1);
+        Log.i(num1,"value of num1");
+        numOne = Double.parseDouble(num1); Log.i(format.format(numOne), "Value of numone in button");
         switch (current_operator){
             case "":
-                pt =  numOne + Result;
+                pt = numOne;
                 stxtOutput= format.format(pt);
                 break;
 
@@ -82,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                         numOne = 0.0;
                         Result = pt;
                         stxtOutput = format.format(pt);
-                        current_operator = op.getText().toString();
+                        current_operator += op.getText().toString();
                         opt = true;
                         decimal = false;
                         update();
@@ -92,11 +98,13 @@ public class MainActivity extends AppCompatActivity {
                         numOne = 0.0;
                         Result = pt;
                         stxtOutput = format.format(pt);
-                        current_operator = op.getText().toString();
+                        current_operator += op.getText().toString();
                         decimal = false;
                         opt = true;
                         update();
                     }
+                    Log.i(current_operator,"all charc");
+                    update();
                 }
             }
     }
@@ -137,115 +145,84 @@ public class MainActivity extends AppCompatActivity {
         }
         return str.substring(0, str.length() - i);
     }
-
-    public void onClickDelete(View view) {
-        if (stxtOutput != "") {
-            if (stxtInput!= "") {
-                if (num1.length() < 2 && current_operator != "") {
-                    num1 = "";
-                    pt = Result;
-                    stxtOutput = format.format(Result).toString();
-                    stxtInput = removechar(stxtInput, 1);
-                    update();
-                } else {
-                    switch (current_operator) {
+    public void onClickDelete(View v){
+        if(stxtInput != "" && stxtOutput !=""){ Log.i("INSIDE","Working");
+            if(stxtInput.length()<2){ Log.i("cleardata","inside stxt.length()<2 loop");
+                Cleardata();
+            }else{
+                if(getcharfromlast(stxtInput,1) == '.'){
+                    if(getcharfromlast(stxtInput,2) == '0'){Log.i("Inside 0. function","Removed");
+                    Log.i(num1,"Value of num1");
+                        stxtInput =removechar(stxtInput,3);
+                        pt = Result;
+                        numOne = Result;
+                        stxtOutput = format.format(pt);
+                        Log.i(format.format(pt), "For Length less than 2 value of pt");
+                        Result = 0.0;
+                        num1 = stxtOutput;
+                        update();
+                    }else {
+                        num1 = removechar(num1, 1);
+                        stxtInput = removechar(stxtInput, 1);
+                        Log.i("DOT", "Removed");
+                        stxtOutput = format.format(pt);
+                        decimal = false;
+                        update();
+                    }
+                }else{
+                    switch (current_operator){
                         case "":
-
-                            if (stxtInput.length() < 2) {
-                                Cleardata();
-                            } else {
-                                if (getcharfromlast(stxtInput, 1) == '.') {
-                                    num1 = removechar(num1, 1);
-                                    numOne = Double.parseDouble(num1);
-                                    pt = numOne;
-                                    stxtInput = num1;
-                                    stxtOutput = num1;
-                                    decimal = false;
+                            num1 = removechar(num1,1); Log.i("Inside case null)","working");
+                            numOne = Double.parseDouble(num1);
+                            pt = numOne;
+                            stxtInput = num1; Log.i(stxtInput,"Removed char:input");
+                            stxtOutput = removechar(stxtOutput,1);Log.i(stxtOutput,"Removed char:Output");
+                            update();
+                            break;
+                        case "+": Log.i("Inside case +","working");
+                            if(num1.length()<2) {
+                                Log.i(format.format(num1.length()), "Length less than 2");
+                                stxtInput = removechar(stxtInput,1);
+                                if (getcharfromlast(stxtInput,1) != '+'){
+                                    Log.i("last string +","working");
+                                    pt = Result;
+                                    stxtOutput = format.format(pt);
+                                    numOne = Result;
+                                    current_operator="";
+                                    Result = 0.0;
+                                    num1 = stxtOutput;
                                     update();
-                                }else{
-                                num1 = removechar(num1, 1);
-                                numOne = Double.parseDouble(num1);
-                                pt = numOne;
-                                stxtInput = num1;
-                                stxtOutput = num1;
-                                update();
+                                }else {
+                                    if (getcharfromlast(stxtInput, 1) == '+') {
+                                        stxtInput = removechar(stxtInput, 1);
+                                        pt = Result;
+                                        stxtOutput = format.format(pt);
+                                        numOne = Result;
+                                        current_operator = ""; Log.i(format.format(pt), "For Length less than 2 value of pt");
+                                        Result = 0.0; Log.i(current_operator, "Contains symbol or not");
+                                        num1 = stxtOutput;
+                                        Log.i(format.format(Result), "Value of result after removing");
+                                        Log.i(format.format(pt), "Value of pt after removing");
+                                        Log.i(num1, "Value of string num1");
+                                        update();
+                                    }
+                                    update();
                                 }
                             }
-                            break;
-
-                        case "+":
-                            if (getcharfromlast(stxtInput, 1) == '.') {
-                                num1 = removechar(num1, 1);
-                                decimal = false;
-                                update();
-                            }else {
-                                num1 = removechar(num1, 1);
-                                if (num1.length() == 1 && num1 == ".") {
-                                    numOne = Double.parseDouble(num1);
-                                }
-                                numOne = Double.parseDouble(num1);
-                                pt = Result + numOne;
-                                stxtOutput = format.format(pt).toString();
+                            else{
+                                num1 = removechar(num1, 1); Log.i(num1, "Value of num1");
+                                numOne = Double.parseDouble(num1); Log.i(format.format(Result), "Value of result");
+                                pt = Result + numOne; Log.i(format.format(pt), "value of pt");
                                 stxtInput = removechar(stxtInput, 1);
+                                stxtOutput = format.format(pt);
                                 update();
+                                break;
                             }
-                            break;
-
-                        case "-":
-                            if (getcharfromlast(stxtInput, 1) == '.') {
-                                decimal = false;
-                            }
-                            num1 = removechar(num1, 1);
-                            if (num1.length() == 1 && num1 == ".") {
-                                numOne = Double.parseDouble(num1);
-                            }
-                            numOne = Double.parseDouble(num1);
-                            pt = Result - numOne;
-                            stxtOutput = format.format(pt).toString();
-                            stxtInput = removechar(stxtInput, 1);
-
-                            update();
-                            break;
-
-                        case "x":
-
-                            if (getcharfromlast(stxtInput, 1) == '.') {
-                                decimal = false;
-                            }
-                            num1 = removechar(num1, 1);
-                            if (num1.length() == 1 && num1 == ".") {
-                                numOne = Double.parseDouble(num1);
-                            }
-                            numOne = Double.parseDouble(num1);
-                            pt = Result * numOne;
-                            stxtOutput = format.format(pt).toString();
-                            stxtInput = removechar(stxtInput, 1);
-
-                            update();
-                            break;
-
-                        case "/":
-                            try {
-                                if (getcharfromlast(stxtInput, 1) == '.') {
-                                    decimal = false;
-                                }
-                                num1 = removechar(num1, 1);
-                                if (num1.length() == 1 && num1 == ".") {
-                                    numOne = Double.parseDouble(num1);
-                                }
-                                numOne = Double.parseDouble(num1);
-                                pt = Result / numOne;
-                                stxtOutput = format.format(pt).toString();
-                                stxtInput = removechar(stxtInput, 1);
-
-                            } catch (Exception e) {
-                                stxtOutput = e.getMessage();
-                            }
-                            update();
-                            break;
+                        }
                     }
                 }
-            }
+        }else {
+            Log.i("Outside", "notworking");
         }
     }
 
